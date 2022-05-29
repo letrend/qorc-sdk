@@ -48,3 +48,7 @@ Symbiflow_v*.gz.run
 
 # backup files
 *.bak
+
+*.swp
+*.wav
+

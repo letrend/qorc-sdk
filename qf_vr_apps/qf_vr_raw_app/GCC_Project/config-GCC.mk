@@ -12,7 +12,7 @@ DASH_O=-Os
 
 #Assembler flags
 export AS_FLAGS= -mcpu=cortex-m4 -mthumb -mlittle-endian -mfloat-abi=hard -mfpu=fpv4-sp-d16 $(DASH_O) -fmessage-length=0 \
-        -fsigned-char -ffunction-sections -fdata-sections  $(DASH_G) -MMD -MP 
+        -fsigned-char -ffunction-sections -fdata-sections  $(DASH_G) -MMD -MP
 
 #Preprocessor macros
 
@@ -72,7 +72,7 @@ export LD_FLAGS_1= -mcpu=cortex-m4 -mthumb -mlittle-endian -mfloat-abi=hard -mfp
 	$(DASH_G) -T "$(PROJ_DIR)/quickfeather.ld" -Xlinker --gc-sections -Wall -Werror \
 	-Wl,--fatal-warnings -Wl,--print-memory-usage -Wl,-Map,"$(OUTPUT_PATH)/$(OUTPUT_FILE).map" \
     --specs=nano.specs -u _printf_float --specs=nosys.specs -Wl,--no-wchar-size-warning \
-    -o "$(OUTPUT_PATH)/$(OUTPUT_FILE).elf" 
+    -o "$(OUTPUT_PATH)/$(OUTPUT_FILE).elf"
 
 export LD_FLAGS_2=-L$(LIBCMSIS_GCC_DIR) -lm -larm_cortexM4lf_math
 export ELF2BIN_OPTIONS=-O binary

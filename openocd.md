@@ -7,3 +7,10 @@ telnet localhost 4444
 reset init
 load_image /home/letrend/workspace/qorc-sdk/qf_apps/quickfeather-initial-binaries/qf_bootloader.bin
 reset run
+
+# or run gdb
+arm-none-eabi-gdb qf_helloworldsw.elf
+target extended-remote localhost:3333
+monitor reset halt
+load
+continue
